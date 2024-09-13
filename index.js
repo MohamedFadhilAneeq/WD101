@@ -2,7 +2,6 @@ let userform = document.getElementById("form");
 
 let entries = [];
 
-localStorage.clear();
 
 verify = (elem, message, cnd) => {
   if (cnd) {
