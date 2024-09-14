@@ -1,6 +1,6 @@
 let userform = document.getElementById("form");
 
-let entries = retrieval();
+let entries = [];
 
 verify = (elem, message, cnd) => {
   if (cnd) {
@@ -33,11 +33,11 @@ dob.addEventListener("input", (e) => {
 const retrieve = () => {
   let dentries = localStorage.getItem("form");
   if (dentries) {
-    dentries = JSON.parse(dentries);
+    entries = JSON.parse(dentries);
   } else {
-    dentries = [];
+    entries = [];
   }
-  return dentries;
+  return entries;
 };
 
 let retrieval = retrieve();
@@ -63,7 +63,6 @@ const displayEntries = () => {
 
 const saveData = (event) => {
   event.preventDefault();
-
   const name = document.getElementById("name").value;
   const email = document.getElementById("email").value;
   const password = document.getElementById("password").value;
