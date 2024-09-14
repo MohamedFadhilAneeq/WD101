@@ -1,7 +1,6 @@
 let userform = document.getElementById("form");
 
-let entries = [];
-
+let entries = retrieval();
 
 verify = (elem, message, cnd) => {
   if (cnd) {
@@ -56,7 +55,7 @@ const displayEntries = () => {
       return row;
     })
     .join("\n");
-  const table = `<table><tr><th>Name</th><th>Email</th><th>Password</th><th>dob</th><th>Accepted terms?</th></tr>${tableEntries}</table>`;
+  const table = `<table><tr><th>Name</th><th>Email</th><th>Password</th><th>dob</th><th>accepted terms?</th></tr>${tableEntries}</table>`;
 
   let details = document.getElementById("table");
   details.innerHTML = table;
@@ -64,6 +63,7 @@ const displayEntries = () => {
 
 const saveData = (event) => {
   event.preventDefault();
+
   const name = document.getElementById("name").value;
   const email = document.getElementById("email").value;
   const password = document.getElementById("password").value;
